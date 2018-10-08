@@ -1,43 +1,45 @@
-<div class="container">
+<div class="bg_img">
     <h2>Welcome to My FirstWebsite.Please SignUp to my web.</h2>
-    
-    <form class="form-horizontal" >
-        <div class="form-group">
-            <label class="control-label col-sm-2" for="email">UserName:</label>
-            <div class="col-xs-4">
-              <input type="email" class="form-control" id="email" placeholder="Enter UserName" name="email">
+    <div class="signup">    
+        <form class="form-horizontal" >
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">UserName:</label>
+                <div class="col-xs-6">
+                  <input type="email" class="form-control" [(ngModel)]="username" placeholder="Enter UserName" name="email">
+                </div>
+              </div>
+            <div class="form-group">
+            <label class="control-label col-sm-2" for="email">Email:</label>
+            <div class="col-xs-6">
+              <input type="email" class="form-control" [(ngModel)]="email" placeholder="Enter email" name="email">
             </div>
           </div>
-        <div class="form-group">
-        <label class="control-label col-sm-2" for="email">Email:</label>
-        <div class="col-xs-4">
-          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-        </div>
-      </div>
-      <div class="form-group">
-        <label class="control-label col-sm-2" for="pwd">Password:</label>
-        <div class="col-xs-4">          
-          <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-        </div>
-      </div>
-      <div class="form-group">
-          <label class="control-label col-sm-2" for="pwd">Phone:</label>
-          <div class="col-xs-4">          
-            <input type="password" class="form-control" id="pwd" placeholder="Enter Phone" name="pwd">
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="pwd">Password:</label>
+            <div class="col-xs-6">          
+              <input type="password" class="form-control" [(ngModel)]="password" placeholder="Enter password" name="pwd">
+            </div>
           </div>
-        </div>
-        <div class="form-group">        
-        <div class="col-sm-offset-2 col-sm-10">
-          <div class="checkbox">
-            <label><input type="checkbox" name="remember"> By clicking Sign Up, you agree with all the terms & conditions.</label>
+          <div class="form-group">
+              <label class="control-label col-sm-2" for="pwd">Phone:</label>
+              <div class="col-xs-6">          
+                <input type="password" class="form-control" [(ngModel)]="phone" placeholder="Enter Phone" name="phone">
+              </div>
+            </div>
+            <div class="form-group">        
+            <div class="col-sm-offset-0 col-sm-10">
+              <div class="checkbox">
+                <label class="termAndCondition"><input type="checkbox" name="remember"> By clicking Sign Up, you agree with all the terms & conditions.</label>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="form-group">        
-        <div class="col-sm-offset-2 col-sm-10 ">
-          <button type="submit" class="btn btn-success">SignUp</button>
-        </div>
-      </div>
-    </form>
-  </div>
+          <div class="form-group">        
+            <div class="col-sm-offset-2 col-sm-10 ">
+              <button type="submit" class="btn btn-success" routerLink="home">SignUp</button>
+            </div>
+          </div>
+        </form>
+    </div>
+    
+</div>
   

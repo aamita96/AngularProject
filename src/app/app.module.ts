@@ -6,10 +6,11 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import {Routes, RouterModule} from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import {FormsModule} from '@angular/forms';
 
 const appRoutes:Routes=[
-{path:'' ,component:HomeComponent},
-{path:'login' ,component:LoginComponent},
+{path:'' ,component:LoginComponent},
+{path:'home' ,component:HomeComponent},
 {path:'signup',component:SignupComponent}
 ];
 
@@ -18,12 +19,13 @@ const appRoutes:Routes=[
     AppComponent,
     SignupComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
     
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

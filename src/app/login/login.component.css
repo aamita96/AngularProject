@@ -1,0 +1,22 @@
+.bg_img{
+    background: url('../../assets/images/bgImg2.jpg');
+    height: 100vh;
+}
+
+.login{   
+    background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.1); /* Black background with 0.5 opacity */
+    width: 50%;
+    height: 30%;
+    position:absolute;
+    margin-top: 15%;
+    margin-left: 28%;
+    border: 1px solid;
+    border-radius: 32px;
+    padding-left: 32px;
+    padding-top: 28px;
+    box-shadow: 5px 6px dodgerblue;
+}
+.link-btn{
+    color:black;
+}
