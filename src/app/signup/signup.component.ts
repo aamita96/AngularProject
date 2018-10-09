@@ -10,10 +10,14 @@ export class SignupComponent implements OnInit {
   email:string;
   password:string;
   phone:number;
+  chkbox=false;
   constructor() { }
 
   ngOnInit() {
   }
-  // console.log();
+  onSignUp(){
+    console.log(this.username,this.email,this.password,this.phone,this.chkbox);
+  }
+  
   
 }

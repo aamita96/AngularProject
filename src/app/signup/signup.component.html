@@ -23,19 +23,19 @@
           <div class="form-group">
               <label class="control-label col-sm-2" for="pwd">Phone:</label>
               <div class="col-xs-6">          
-                <input type="password" class="form-control" [(ngModel)]="phone" placeholder="Enter Phone" name="phone">
+                <input type="number" class="form-control" [(ngModel)]="phone" placeholder="Enter Phone" name="phone">
               </div>
             </div>
             <div class="form-group">        
             <div class="col-sm-offset-0 col-sm-10">
               <div class="checkbox">
-                <label class="termAndCondition"><input type="checkbox" name="remember"> By clicking Sign Up, you agree with all the terms & conditions.</label>
+                <label class="termAndCondition"><input type="checkbox" name="remember" [(ngModel)]="chkbox"> By clicking Sign Up, you agree with all the terms & conditions.</label>
               </div>
             </div>
           </div>
           <div class="form-group">        
             <div class="col-sm-offset-2 col-sm-10 ">
-              <button type="submit" class="btn btn-success" routerLink="home">SignUp</button>
+              <button class="btn btn-success" (click)="onSignUp()">SignUp</button>
             </div>
           </div>
         </form>
