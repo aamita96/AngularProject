@@ -1,45 +1,62 @@
 <div class="bg_img">
-    <h2>Welcome to My FirstWebsite.Please SignUp to my web.</h2>
-    <div class="signup">    
-        <form class="form-horizontal" >
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="email">UserName:</label>
-                <div class="col-xs-6">
-                  <input type="email" class="form-control" [(ngModel)]="username" placeholder="Enter UserName" name="email">
-                </div>
-              </div>
-            <div class="form-group">
+  <div class="container">
+    <div class="row">
+      <h2>Welcome to My FirstWebsite.Please SignUp to my web.</h2>
+      <div class="signup">
+        <form class="form-horizontal" [formGroup]="signupForm" (ngSubmit)="onSignUp()">
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="email">UserName:</label>
+            <div class="col-xs-6">
+              <input type="email" class="form-control" placeholder="Enter UserName" formControlName="username">
+              <span class="help-block" *ngIf="!this.signupForm.get('username').valid && this.signupForm.get('username').touched">Please
+                enter UserName!</span>
+            </div>
+          </div>
+          <div class="form-group">
             <label class="control-label col-sm-2" for="email">Email:</label>
             <div class="col-xs-6">
-              <input type="email" class="form-control" [(ngModel)]="email" placeholder="Enter email" name="email">
+              <input type="email" class="form-control" placeholder="Enter email" formControlName="email">
+              <span class="help-block" *ngIf="!this.signupForm.get('email').valid && this.signupForm.get('email').touched">Please
+                enter a valid email!</span>
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-sm-2" for="pwd">Password:</label>
-            <div class="col-xs-6">          
-              <input type="password" class="form-control" [(ngModel)]="password" placeholder="Enter password" name="pwd">
+            <div class="col-xs-6">
+              <input type="password" class="form-control" placeholder="Enter password" formControlName="password">
+              <span class="help-block" *ngIf="!this.signupForm.get('password').valid && this.signupForm.get('password').touched">
+                  <span *ngIf="this.signupForm.get('password').errors.minlength" class="help-block">Minimum password length is 6</span>
+               This field is requried!</span>
             </div>
           </div>
           <div class="form-group">
-              <label class="control-label col-sm-2" for="pwd">Phone:</label>
-              <div class="col-xs-6">          
-                <input type="number" class="form-control" [(ngModel)]="phone" placeholder="Enter Phone" name="phone">
-              </div>
+            <label class="control-label col-sm-2" for="pwd">Phone:</label>
+            <div class="col-xs-6">
+              <input type="number" class="form-control" placeholder="Enter Phone" formControlName="phone" maxlength="10">
+              <span class="help-block" *ngIf="!this.signupForm.get('phone').valid && this.signupForm.get('phone').touched">
+                  <span class="help-block" *ngIf="this.signupForm.get('phone').errors.min || this.signupForm.get('phone').errors.max">Phone number must conatain 10 digits!</span>
+                      Please enter your phone numeber!
+              </span>
             </div>
-            <div class="form-group">        
+          </div>
+          <div class="form-group">
             <div class="col-sm-offset-0 col-sm-10">
-              <div class="checkbox">
-                <label class="termAndCondition"><input type="checkbox" name="remember" [(ngModel)]="chkbox"> By clicking Sign Up, you agree with all the terms & conditions.</label>
+              <div class="checkbox col-lg-offset-2">
+                <br>
+                <label class="termAndCondition"><input type="checkbox" formControlName="term_and_conditon"> By clicking
+                  Sign Up, you agree with all the terms & conditions and to SignUp you must agree with the
+                  terms&conditions!</label>
               </div>
             </div>
           </div>
-          <div class="form-group">        
+          <span class="help-block col-lg-offset-2"></span><br>
+          <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10 ">
-              <button class="btn btn-success" (click)="onSignUp()">SignUp</button>
+              <button class="btn btn-success col-lg-offset-2" [disabled]="!this.signupForm.get('term_and_conditon').value === true">SignUp</button>
             </div>
           </div>
         </form>
+      </div>
     </div>
-    
+  </div>
 </div>
-  

@@ -1,21 +1,21 @@
 .bg_img{
     background: url('../../assets/images/bgImg2.jpg');
     height: 100vh;
+    /* overflow: hidden; */
 }
 
 .signup{   
-    background: rgb(0, 0, 0); /* Fallback color */
-  background: rgba(0, 0, 0, 0.1); /* Black background with 0.5 opacity */
-    width: 50%;
-    height: 50%;
+   /* background: rgb(0, 0, 0);*/ /* Fallback color */
+    background: rgba(0, 0, 0, 0.1);
+    width: 65%;
+    height: auto;
     position:absolute;
-    margin-top: 7%;
-    margin-left: 28%;
     border: 1px solid;
     border-radius: 32px;
-    padding-left: 10%;
+    padding-left: 5%;
     padding-top: 50px;
     box-shadow: 5px 6px dodgerblue;
+    margin: 4% 9%;
 }
 .termAndCondition{
     color:dimgrey;
@@ -28,4 +28,11 @@ h2{
     padding-top: 4%;
     padding-left: 8%;
     font-weight: bolder;
+}
+span{
+    color: #be4b49;
+}
+
+input.checkbox{
+    color:#be4b49;
 }
